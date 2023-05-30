@@ -67,6 +67,7 @@ ResponseEntity<Map<String, Object>> healthz() {
 		return ResponseEntity.status(HttpStatus.OK).body(body);
 	}	catch(Exception ref) {
 		Map<String, Object> body = new HashMap<>();
+		
         log.fine("Se ha recibido esta excepción: "+ref);
 		body.put("healthy", false);
 		body.put("error", ref.getMessage());
